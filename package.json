@@ -1,0 +1,25 @@
+{
+  "name": "eyedesk",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start:coordinator": "npx ts-node coordinator.ts",
+    "start:watcher": "npx ts-node watcher-worker.ts",
+    "start:all": "concurrently \"npm run start:coordinator\" \"sleep 1 && npm run start:watcher\" \"sleep 2 && npm run start:ml\""
+  },
+  "dependencies": {
+    "active-win": "^8.2.1",
+    "express": "^5.1.0",
+    "node-window-manager": "^2.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.0",
+    "concurrently": "^9.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
